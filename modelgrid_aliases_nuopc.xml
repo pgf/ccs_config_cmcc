@@ -624,6 +624,13 @@
     <mask>gx1v7</mask>
   </model_grid>
 
+  <model_grid alias="f05_f05_mn0253">
+    <grid name="atm">0.47x0.63</grid>
+    <grid name="lnd">0.47x0.63</grid>
+    <grid name="ocnice">0.47x0.63</grid>
+    <mask>tn0.25v3</mask>
+  </model_grid>
+
   <model_grid alias="f19_g16">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
