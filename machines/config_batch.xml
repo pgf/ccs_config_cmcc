@@ -539,6 +539,7 @@
       <arg flag="-q" name="$JOB_QUEUE"/>
       <arg flag="-W" name="$JOB_WALLCLOCK_TIME"/>
       <arg flag="-P" name="$PROJECT"/>
+      <arg flag="-M" name="300GB"/>
       <arg flag="-x" />
     </submit_args>
     <directives>
