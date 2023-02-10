@@ -1,0 +1,12 @@
+set(AR "xiar")
+set(ARFLAGS "cru")
+if (MPILIB STREQUAL impi)
+  string(APPEND FFLAGS " -qmkl=cluster  ")
+  string(APPEND CFLAGS " -qmkl=cluster  ")
+  string(APPEND LDFLAGS " -L/juno/opt/spacks/0.20.0/opt/spack/linux-rhel8-icelake/intel-2021.6.0/xerces-c/3.2.3-witntw6kh77tp7mqhlrvpk2ezimigecm/lib/ -lxerces-c ")
+  string(APPEND SLIBS " -qmkl=cluster -lstdc++")
+endif()
+set(MPICC "mpiicc")
+set(MPICXX "mpiicpc")
+set(MPIFC "mpiifort")
+

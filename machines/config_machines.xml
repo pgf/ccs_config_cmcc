@@ -2235,6 +2235,79 @@ This allows using a different mpirun command to launch unit tests
     </resource_limits>
   </machine>
 
+  <machine MACH="juno">
+    <DESC> CMCC Lenovo ThinkSystem SD630 v2, os is Linux, 36 pes/node, batch system is LSF</DESC>
+    <NODENAME_REGEX>(login[1,2].cluster.net|n[0-9][0-9][0-9].cluster.net)</NODENAME_REGEX>
+    <OS>LINUX</OS>
+    <COMPILERS>intel</COMPILERS>
+    <MPILIBS>impi</MPILIBS>
+    <PROJECT>R000</PROJECT>
+    <CIME_OUTPUT_ROOT>/work/$ENV{DIVISION}/$ENV{USER}/CMCC-CM</CIME_OUTPUT_ROOT>
+    <DIN_LOC_ROOT>$ENV{CESMDATAROOT}/inputdata</DIN_LOC_ROOT>
+    <DIN_LOC_ROOT_CLMFORC>$DIN_LOC_ROOT/atm/datm7</DIN_LOC_ROOT_CLMFORC>
+    <DOUT_S_ROOT>$CIME_OUTPUT_ROOT/archive/$CASE</DOUT_S_ROOT>
+    <BASELINE_ROOT>$ENV{CESMDATAROOT}/ccsm_baselines</BASELINE_ROOT>
+    <CCSM_CPRNC>$ENV{CESMDATAROOT}/cesm2_tools/cprnc/cprnc</CCSM_CPRNC>
+    <PERL5LIB>/usr/lib64/perl5:/usr/share/perl5</PERL5LIB>
+    <GMAKE_J>8</GMAKE_J>
+    <BATCH_SYSTEM>lsf</BATCH_SYSTEM>
+    <SUPPORTED_BY>cmcc</SUPPORTED_BY>
+    <MAX_TASKS_PER_NODE>72</MAX_TASKS_PER_NODE>
+    <MAX_MPITASKS_PER_NODE>72</MAX_MPITASKS_PER_NODE>
+    <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
+    <mpirun mpilib="default">
+      <executable> mpirun </executable>
+    </mpirun>
+    <module_system type="module">
+      <init_path lang="perl">/juno/opt/module-environment/5.2.0/init/perl.pm</init_path>
+      <init_path lang="python">/juno/opt/module-environment/5.2.0/init/python.py</init_path>
+      <init_path lang="csh">/juno/opt/module-environment/5.2.0/init/csh</init_path>
+      <init_path lang="sh">/juno/opt/module-environment/5.2.0/init/sh</init_path>
+      <cmd_path lang="perl">/juno/opt/module-environment/5.2.0/bin/modulecmd perl</cmd_path>
+      <cmd_path lang="python">/juno/opt/module-environment/5.2.0/bin/modulecmd python </cmd_path>
+      <cmd_path lang="sh">module</cmd_path>
+      <cmd_path lang="csh">module</cmd_path>
+      <modules>
+        <command name="purge"/>
+      </modules>
+      <modules compiler="intel">
+        <command name="load">oneapi-2022.1.0/compiler-rt/2022.1.0</command>
+        <command name="load">intel-2021.6.0/2021.6.0</command>
+        <command name="load">impi-2021.6.0/2021.6.0</command>
+        <command name="load">intel-2021.6.0/curl/7.85.0-djjip</command>
+        <command name="load">intel-2021.6.0/cmake/3.25.1-7wfsx</command>
+        <command name="load">intel-2021.6.0/perl/5.36.0-jj4hw</command>
+        <command name="load">intel-2021.6.0/perl-xml-libxml/2.0201-shybf</command>
+        <command name="load">intel-2021.6.0/xerces-c/3.2.3-witnt</command>
+        <command name="load">oneapi-2022.1.0/tbb/2021.6.0</command>
+        <command name="load">oneapi-2022.1.0/mkl/2022.1.0</command>
+        <command name="load">intel-2021.6.0/impi-2021.6.0/hdf5/1.13.3-76cip</command>
+        <command name="load">intel-2021.6.0/impi-2021.6.0/netcdf-c/4.9.0-qbuoy</command>
+        <command name="load">intel-2021.6.0/impi-2021.6.0/netcdf-fortran/4.6.0-gohn7</command>
+        <command name="load">intel-2021.6.0/impi-2021.6.0/parallel-netcdf/1.12.3-eshb5</command>
+        <command name="load">intel-2021.6.0/impi-2021.6.0/xios/2.5-gutr2</command>
+      </modules>
+      <modules compiler="intel" DEBUG="TRUE">
+              <command name="load">intel-2021.6.0/impi-2021.6.0/esmf-dbg/8.3.0b09-66ecm</command> <!-- da aggiornare a esmf8.4.1 appena disponibile -->
+      </modules>
+      <modules compiler="intel" DEBUG="FALSE">
+        <command name="load">intel-2021.6.0/impi-2021.6.0/esmf/8.3.0b09-p5224</command> <!-- da aggiornare a esmf8.4.1 appena disponibile -->
+      </modules>
+    </module_system>
+    <environment_variables>
+      <env name="XIOS_PATH">/juno/opt/spacks/0.20.0/opt/spack/linux-rhel8-icelake/intel-2021.6.0/xios/2.5-gutr2ex6mh2mwxdwaizhqoums3th7dr4</env>
+    </environment_variables>
+    <environment_variables comp_interface="nuopc">
+      <env name="ESMF_RUNTIME_PROFILE">ON</env>
+      <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
+    </environment_variables>
+    <environment_variables compiler="intel">
+      <env name="I_MPI_HYDRA_BOOTSTRAP">lsf</env>
+      <env name="I_MPI_HYDRA_IFACE">ib0</env>
+      <env name="I_MPI_HYDRA_BRANCH_COUNT">{{ num_nodes }}</env>
+    </environment_variables>
+  </machine>
+
   <machine MACH="laramie">
     <DESC>NCAR SGI test platform, os is Linux, 36 pes/node, batch system is PBS</DESC>
     <NODENAME_REGEX>.*.laramie.ucar.edu</NODENAME_REGEX>
