@@ -10,6 +10,7 @@
     <grid name="rof"       compset="DWAV"        >rx1</grid>
     <grid name="rof"       compset="RTM"         >r05</grid>
     <grid name="rof"       compset="MOSART"      >r05</grid>
+    <grid name="rof"       compset="HYDROS"      >r05</grid>
     <grid name="rof"       compset="MIZUROUTE"   >r05mz</grid>
     <grid name="rof"       compset="DROF"        >rx1</grid>
     <grid name="rof"       compset="DROF%CPLHIST">r05</grid>
