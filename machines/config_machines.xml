@@ -2257,7 +2257,7 @@ This allows using a different mpirun command to launch unit tests
     <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
     <mpirun mpilib="default">
 	    <!--  <executable> mpirun </executable> --> 
-	<executable> mpiexec.hydra </executable> 
+	    <executable> mpiexec.hydra </executable> 
     </mpirun>
     <module_system type="module">
       <init_path lang="perl">/juno/opt/module-environment/5.2.0/init/perl.pm</init_path>
@@ -2315,31 +2315,30 @@ This allows using a different mpirun command to launch unit tests
           <command name="load">intel-2021.6.0/lzo/2.10-o5rf7</command>
           <command name="load">intel-2021.6.0/boost/1.80.0-paock</command>
           <command name="load">intel-2021.6.0/mbedtls/2.28.0-g3uom</command>
-          <command name="load">intel-2021.6.0/impi-2021.6.0/xios/2.5-ltc25</command>
+          <command name="load">intel-2021.6.0/impi-2021.6.0/xios/2.5-36kwn</command>
           <command name="load">intel-2021.6.0/libarchive/3.5.2-5bbgw</command>
-          <command name="load">intel-2021.6.0/impi-2021.6.0/parallelio/2.5.9-yg3hi</command>
+	  <command name="load">intel-2021.6.0/impi-2021.6.0/parallelio/2.6.0-tc4q3</command> 
           <command name="load">intel-2021.6.0/libuv/1.44.1-v7e5k</command>
       </modules>
       <modules compiler="intel" DEBUG="TRUE"> 
-	      <command name="load">intel-2021.6.0/impi-2021.6.0/esmf-dbg/8.4.1-llmff</command> 
+	      <command name="load">intel-2021.6.0/impi-2021.6.0/esmf-dbg/8.4.2-pioext_2.6.0-o5yu4</command>  
       </modules>
       <modules compiler="intel" DEBUG="FALSE"> 
-      		<command name="load">intel-2021.6.0/impi-2021.6.0/esmf/8.4.1-ouoeb</command>  
+	      <command name="load">intel-2021.6.0/impi-2021.6.0/esmf/8.4.2-pioext_2.6.0-dnjmu</command> 
       </modules> 
     </module_system>
     <environment_variables>
-      <env name="XIOS_PATH">/juno/opt/spacks/0.20.0/opt/spack/linux-rhel8-icelake/intel-2021.6.0/xios/2.5-ltc25rohqws6elzxkwslgjw4jsu5qahy</env>
+      <env name="XIOS_PATH">/juno/opt/spacks/0.20.0/opt/spack/linux-rhel8-icelake/intel-2021.6.0/xios/2.5-36kwnuq7kykbrljrnubnwenyvyzbbmz5</env>
     </environment_variables>
     <environment_variables comp_interface="nuopc">
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
-      <env name="PIO_INCDIR">/juno/opt/spacks/0.20.0/opt/spack/linux-rhel8-icelake/intel-2021.6.0/intel-oneapi-mpi-2021.6.0/parallelio/2.5.9-yg3hicmfi7y76meiuzhboxrappkwoxfl/include</env>
-      <env name="PIO_LIBDIR">/juno/opt/spacks/0.20.0/opt/spack/linux-rhel8-icelake/intel-2021.6.0/intel-oneapi-mpi-2021.6.0/parallelio/2.5.9-yg3hicmfi7y76meiuzhboxrappkwoxfl/lib</env> 
+      <env name="PIO_INCDIR">/juno/opt/spacks/0.20.0/opt/spack/linux-rhel8-icelake/intel-2021.6.0/intel-oneapi-mpi-2021.6.0/parallelio/2.6.0-tc4q35xniwdvqw4pihkv3fr5j2q5yl7u/include</env> 
+      <env name="PIO_LIBDIR">/juno/opt/spacks/0.20.0/opt/spack/linux-rhel8-icelake/intel-2021.6.0/intel-oneapi-mpi-2021.6.0/parallelio/2.6.0-tc4q35xniwdvqw4pihkv3fr5j2q5yl7u/lib</env> 
     </environment_variables>
     <environment_variables compiler="intel"> 
 	<env name="I_MPI_HYDRA_BOOTSTRAP">lsf</env> 
 	<env name="I_MPI_HYDRA_IFACE">ib0</env>
-	<!-- <env name="I_MPI_FABRICS">ofi</env> -->
 	<env name="I_MPI_HYDRA_BRANCH_COUNT">{{ num_nodes }}</env> 
     </environment_variables>
   </machine>
