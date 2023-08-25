@@ -1418,4 +1418,44 @@
     <grid name="wav">ww3a</grid>
   </model_grid>
 
+  <model_grid alias="TL319_wtn14" not_compset="_CAM|_MOM|_POP|_NEMO">
+    <grid name="atm">TL319</grid>
+    <grid name="wav">wtnx1v4</grid>
+    <mask>wtnx1v4</mask>
+  </model_grid>  
+
+  <model_grid alias="TL319_w025" not_compset="_CAM|_MOM|_POP|_NEMO">
+    <grid name="atm">TL319</grid>
+    <grid name="wav">w025</grid>
+    <mask>w025</mask>
+  </model_grid>
+
+  <model_grid alias="TL639_w025" not_compset="_CAM|_MOM|_POP|_NEMO">
+    <grid name="atm">TL639</grid>
+    <grid name="wav">w025</grid>
+    <mask>w025</mask>
+  </model_grid>
+
+  <model_grid alias="T62_wtn14" not_compset="_CAM|_MOM|_POP|_NEMO">
+    <grid name="atm">T62</grid>
+    <grid name="wav">wtnx1v4</grid>
+    <mask>wtnx1v4</mask>
+  </model_grid>
+
+  <model_grid alias="T62_w025" not_compset="_CAM|_MOM|_POP|_NEMO">
+    <grid name="atm">T62</grid>
+    <grid name="wav">w025</grid>
+    <mask>w025</mask>
+  </model_grid>
+
+  <!-- CMCC-CM ww3 testing configurations WITH ocean-->
+
+  <model_grid alias="TL639_n0253_w025" not_compset="_CAM">
+    <grid name="atm">TL639</grid>
+    <grid name="ocnice">tn0.25v3</grid>
+    <grid name="wav">w025</grid>
+    <grid name="rof">JRA025</grid>
+    <mask>tn0.25v3</mask>
+  </model_grid>
+
 </grids>
