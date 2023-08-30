@@ -2319,6 +2319,8 @@ This allows using a different mpirun command to launch unit tests
           <command name="load">intel-2021.6.0/libarchive/3.5.2-5bbgw</command>
 	  <command name="load">intel-2021.6.0/impi-2021.6.0/parallelio/2.6.0-tc4q3</command> 
           <command name="load">intel-2021.6.0/libuv/1.44.1-v7e5k</command>
+          <command name="load">intel-2021.6.0/metis/5.1.0-z5fvk</command>
+          <command name="load">intel-2021.6.0/impi-2021.6.0/parmetis/4.0.3-ocsgn</command>
       </modules>
       <modules compiler="intel" DEBUG="TRUE"> 
 	      <command name="load">intel-2021.6.0/impi-2021.6.0/esmf-dbg/8.4.2-pioext_2.6.0-o5yu4</command>  
