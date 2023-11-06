@@ -48,6 +48,16 @@
 	<walltime>0:20:00</walltime>
       </runtime_parameters>
     </job>
+    <job name="case.nemo_rebuild">
+      <template>template.nemo_rebuild4cmcc-cm</template>
+      <dependency>case.st_archive</dependency>
+      <prereq>$NEMO_REBUILD</prereq>
+      <runtime_parameters MACH="juno">
+                <task_count>1</task_count>
+                <tasks_per_node>1</tasks_per_node>
+                <walltime>1:00:00</walltime>
+      </runtime_parameters>
+    </job>
   </workflow_jobs>
 
   <workflow_jobs id="timeseries" prepend="default">
