@@ -14,7 +14,7 @@ cd $CASEROOT
 #get case name and cores dedicated to ocean model from xml files
 CASE=`./xmlquery CASE|cut -d ':' -f2|sed 's/ //g'`
 NTASK=`./xmlquery NTASKS_OCN |cut -d ':' -f2|sed 's/ //g'`
-# this is the number of parallel postprocessing you want to set
+# this is the number of parallel postprocessign you want to set and must be a an integer
 N=$((NTASK/10))
 CIME_OUTPUT_ROOT=`./xmlquery CIME_OUTPUT_ROOT|cut -d ':' -f2|sed 's/ //g'`
 NEMO_REBUILD_ROOT=`./xmlquery NEMO_REBUILD_ROOT|cut -d ':' -f2|sed 's/ //g'`
